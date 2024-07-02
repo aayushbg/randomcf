@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Codeforces Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #question {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Get a Random Codeforces Question</h1>
+  
+  <label for="tag">Select Tag:</label>
+  <select id="tag">
+    <option value="">Any</option>
+    <option value="implementation">Implementation</option>
+    <option value="math">Math</option>
+    <option value="dp">Dynamic Programming</option>
+    <option value="graphs">Graphs</option>
+    <option value="data structures">Data Structures</option>
+    <!-- Add more tags as needed -->
+  </select>
+  
+  <br><br>
+  
+  <label for="lowerBound">Lower Bound:</label>
+  <input type="number" id="lowerBound" min="800" max="3500" step="100">
+  
+  <label for="upperBound">Upper Bound:</label>
+  <input type="number" id="upperBound" min="800" max="3500" step="100">
+  
+  <br><br>
+  
+  <button id="fetchQuestion">Get Question</button>
+  <div id="question"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
