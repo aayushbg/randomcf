@@ -4,47 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Codeforces Question</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 50px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-    #question {
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Get a Random Codeforces Question</h1>
-  
-  <label for="tag">Select Tag:</label>
-  <select id="tag">
-    <option value="">Any</option>
-    <option value="implementation">Implementation</option>
-    <option value="math">Math</option>
-    <option value="dp">Dynamic Programming</option>
-    <option value="graphs">Graphs</option>
-    <option value="data structures">Data Structures</option>
-    <!-- Add more tags as needed -->
-  </select>
-  
-  <br><br>
-  
-  <label for="lowerBound">Lower Bound:</label>
-  <input type="number" id="lowerBound" min="800" max="3500" step="100">
-  
-  <label for="upperBound">Upper Bound:</label>
-  <input type="number" id="upperBound" min="800" max="3500" step="100">
-  
-  <br><br>
-  
-  <button id="fetchQuestion">Get Question</button>
-  <div id="question"></div>
+  <div class="container">
+    <div class="input-container">
+      <h1>Get a Random Codeforces Problem</h1>
+      
+      <div class="input-group">
+        <label for="tag">Select Tag:</label>
+        <select id="tag">
+          <option value="">Any</option>
+          <option value="implementation">Implementation</option>
+          <option value="math">Math</option>
+          <option value="dp">Dynamic Programming</option>
+          <option value="graphs">Graphs</option>
+          <option value="data structures">Data Structures</option>
+          <option value="binary search">Binary Search</option>
+          <option value="constructive algorithms">Constructive Algorithms</option>
+          <option value="divide and conquer">Divide and Conquer</option>
+          <option value="geometry">Geometry</option>
+          <option value="brute force">Brute Force</option>
+          <option value="combinatorics">Combinatorics</option>
+          <option value="greedy">Greedy</option>
+          <option value="hashing">Hashing</option>
+          <option value="interactive">Interactive</option>
+          <option value="matrices">Matrices</option>
+          <option value="meet-in-the-middle">Meet in the middle</option>
+          <option value="number theory">Number Theory</option>
+          <option value="probabilities">Probabilities</option>
+          <option value="schedules">Schedules</option>
+          <option value="shortest paths">Shortest Paths</option>
+          <option value="sortings">Sortings</option>
+          <option value="string suffix structures">String Suffix Structures</option>
+          <option value="strings">Strings</option>
+          <option value="ternary search">Ternary Search</option>
+          <option value="trees">Trees</option>
+          <option value="two pointers">Two Pointers</option>
+          <option value="2-sat">2 - SAT</option>
+          <option value="bitmasks">Bitmasks</option>
+          <option value="chinese remainder theorem">Chinese Remainder Theorem</option>
+          <option value="dfs and similar">DFS and Similar</option>
+          <option value="dsu">DSU</option>
+          <option value="expression parsing">Expression Parsing</option>
+          <option value="fft">FFT</option>
+          <option value="flows">Flows</option>
+          <option value="games">Games</option>
+          <option value="graph matchings">Graph Matchings</option>
+          <!-- Add more tags as needed -->
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label for="bounds">Rating Bounds:</label>
+        <div id="bounds">
+          <input type="number" id="lowerBound" min="800" max="3500" step="100" placeholder="Low">
+          <input type="number" id="upperBound" min="800" max="3500" step="100" placeholder="High">
+        </div>
+      </div>
+      
+      <div class="input-group tags-group">
+        <label for="showTags">Show Tags:</label>
+        <input type="checkbox" id="showTags">
+      </div>
+      
+      <button id="fetchQuestion" class="btn">Get Question</button>
+    </div>
+    <div class="question-container" id="question-container">
+      <div id="question"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

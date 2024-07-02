@@ -4,6 +4,7 @@ async function fetchRandomQuestion() {
   const tag = document.getElementById('tag').value;
   const lowerBound = parseInt(document.getElementById('lowerBound').value) || 0;
   const upperBound = parseInt(document.getElementById('upperBound').value) || 3500;
+  const showTags = document.getElementById('showTags').checked;
   
   const response = await fetch('https://codeforces.com/api/problemset.problems');
   const data = await response.json();
@@ -22,7 +23,7 @@ async function fetchRandomQuestion() {
     if (problems.length > 0) {
       const randomIndex = Math.floor(Math.random() * problems.length);
       const randomProblem = problems[randomIndex];
-      displayQuestion(randomProblem);
+      displayQuestion(randomProblem, showTags);
     } else {
       document.getElementById('question').innerText = 'No problems found with the selected criteria.';
     }
@@ -31,13 +32,18 @@ async function fetchRandomQuestion() {
   }
 }
 
-function displayQuestion(problem) {
+function displayQuestion(problem, showTags) {
   const questionDiv = document.getElementById('question');
+  const questionContainer = document.getElementById('question-container');
+  questionContainer.style.display = 'block';
+
   questionDiv.innerHTML = `
     <h2>${problem.name}</h2>
     <p>Contest ID: ${problem.contestId}</p>
     <p>Index: ${problem.index}</p>
-    <p>Tags: ${problem.tags.join(', ')}</p>
+    ${showTags ? `<p>Tags: ${problem.tags.join(', ')}</p>` : ''}
     <a href="https://codeforces.com/contest/${problem.contestId}/problem/${problem.index}" target="_blank">View Problem</a>
   `;
 }
+
+
